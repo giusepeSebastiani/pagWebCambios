@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DolarToSoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dolar" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DolarToSolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DolarToSolesResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolesToDolar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="soles" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolesToDolarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SolesToDolarResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDtoS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mon" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setDtoSResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="setStoD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mon" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStoDResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DolarToSolesSoapIn">
+    <wsdl:part name="parameters" element="tns:DolarToSoles" />
+  </wsdl:message>
+  <wsdl:message name="DolarToSolesSoapOut">
+    <wsdl:part name="parameters" element="tns:DolarToSolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolesToDolarSoapIn">
+    <wsdl:part name="parameters" element="tns:SolesToDolar" />
+  </wsdl:message>
+  <wsdl:message name="SolesToDolarSoapOut">
+    <wsdl:part name="parameters" element="tns:SolesToDolarResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDtoSSoapIn">
+    <wsdl:part name="parameters" element="tns:setDtoS" />
+  </wsdl:message>
+  <wsdl:message name="setDtoSSoapOut">
+    <wsdl:part name="parameters" element="tns:setDtoSResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStoDSoapIn">
+    <wsdl:part name="parameters" element="tns:setStoD" />
+  </wsdl:message>
+  <wsdl:message name="setStoDSoapOut">
+    <wsdl:part name="parameters" element="tns:setStoDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceCambiosSoap">
+    <wsdl:operation name="DolarToSoles">
+      <wsdl:input message="tns:DolarToSolesSoapIn" />
+      <wsdl:output message="tns:DolarToSolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolesToDolar">
+      <wsdl:input message="tns:SolesToDolarSoapIn" />
+      <wsdl:output message="tns:SolesToDolarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setDtoS">
+      <wsdl:input message="tns:setDtoSSoapIn" />
+      <wsdl:output message="tns:setDtoSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStoD">
+      <wsdl:input message="tns:setStoDSoapIn" />
+      <wsdl:output message="tns:setStoDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceCambiosSoap" type="tns:WebServiceCambiosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DolarToSoles">
+      <soap:operation soapAction="http://tempuri.org/DolarToSoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolesToDolar">
+      <soap:operation soapAction="http://tempuri.org/SolesToDolar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDtoS">
+      <soap:operation soapAction="http://tempuri.org/setDtoS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStoD">
+      <soap:operation soapAction="http://tempuri.org/setStoD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceCambiosSoap12" type="tns:WebServiceCambiosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DolarToSoles">
+      <soap12:operation soapAction="http://tempuri.org/DolarToSoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolesToDolar">
+      <soap12:operation soapAction="http://tempuri.org/SolesToDolar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDtoS">
+      <soap12:operation soapAction="http://tempuri.org/setDtoS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStoD">
+      <soap12:operation soapAction="http://tempuri.org/setStoD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceCambios">
+    <wsdl:port name="WebServiceCambiosSoap" binding="tns:WebServiceCambiosSoap">
+      <soap:address location="http://localhost:57354/WebServiceCambios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceCambiosSoap12" binding="tns:WebServiceCambiosSoap12">
+      <soap12:address location="http://localhost:57354/WebServiceCambios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
